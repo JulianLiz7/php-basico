@@ -82,7 +82,7 @@
 
     <div class="container">
         <h2>Contáctanos</h2>
-        <form>
+        <form action="/store" method="GET">
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
@@ -93,7 +93,7 @@
                 <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
             </div>
 
-            <button type="submit">Enviar mensaje</button>
+            <button type="submit">Enviar</button>
         </form>
     </div>
 

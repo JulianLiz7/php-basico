@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -10,54 +11,59 @@ Route::get('/contactanos', function () {
     return view('form');
 });
 
+Route::get('/store', function (Request $request) {
+    print_r($request->all());
+});
+
+
 Route::get('/php-basico', function () {
 
-echo "<h1 style='color:red'>  Aprendiendo PHP </h1>";
+    echo "<h1 style='color:red'>  Aprendiendo PHP </h1>";
 
     $name = 'Julian';
     $height = 1.78;
     $islogin = true;
     $age = 18;
 
-    echo "<h4> ".$name." </h4>";
-    echo "<p> ".$name." </p>";
+    echo "<h4> " . $name . " </h4>";
+    echo "<p> " . $name . " </p>";
 
     echo "<br><br><br> ***********ESTRUCTURAS DE CONTROL***********<br><br>";
 
-    $message = "soy $name, tengo $age años". validateAge($age);
+    $message = "soy $name, tengo $age años" . validateAge($age);
 
     $message .= $islogin ? " y estoy logueado" : " y no estoy logueado";
 
     echo $message;
 
-        echo "<br><br><br> ***********ESTRUCTURAS DE DATOS***********<br><br>";
+    echo "<br><br><br> ***********ESTRUCTURAS DE DATOS***********<br><br>";
 
-        $pc = [
-            "name" => "PC Gamer core 9",
-            "price" => 6000,
-            "marca" => "LENOVO",
-        ];
+    $pc = [
+        "name" => "PC Gamer core 9",
+        "price" => 6000,
+        "marca" => "LENOVO",
+    ];
 
-        $teclado = [
-            "name" => "Teclado Gamer",
-            "price" => 200,
-            "marca" => "ASUS",
-        ];
+    $teclado = [
+        "name" => "Teclado Gamer",
+        "price" => 200,
+        "marca" => "ASUS",
+    ];
 
-        $listaProductos = [
-            $pc,
-            $teclado];
+    $listaProductos = [
+        $pc,
+        $teclado
+    ];
 
-        foreach ($listaProductos as $item) {
-            echo $item["name"]. "<br>";
-        }
-    
-
+    foreach ($listaProductos as $item) {
+        echo $item["name"] . "<br>";
+    }
 });
 
-function validateAge($age) {
+function validateAge($age)
+{
     if ($age >= 18) {
-        return" soy mayor de edad";
+        return " soy mayor de edad";
     } else {
         return " soy menor de edad";
     }
