@@ -6,8 +6,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/mi-nombre', function () {
-    return view('Julian Lizcano');
+Route::get('/contactanos', function () {
+    return view('form');
 });
 
 Route::get('/php-basico', function () {
